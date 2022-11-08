@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+<!--Custom Styling-->
+<link rel="stylesheet" href="../css/style.css">
+
+<!--Admin Styling-->
+<link rel="stylesheet" href="../css/admin.css">
+
+<title>Admin Section - Add Posts</title>
+</head>
+
+<!-- Admin Page Wrapper-->
+<div class="admin-wrapper">
+
+
+
+
+<!-- Admin Content-->
+<div class="admin-content">
+    <div class="button-group">
+        <a href="createpost.html" class="btn btn-big">Add Post</a>
+        <a href="index.html" class="btn btn-big">Manage Posts</a>
+    </div>
+
+    <div class="content">
+      <h2 class="page-title">Add Post</h2>
+      <form action="create.html" method="post">
+        <div>
+            <label>Title</label>
+            <input type ="text" name="title" class="text-input"
+        </div>
+    </br>
+</br>
+        <div>
+            <label>Body</label>
+            <textarea name ="body" id="body"></textarea>
+        </div>
+    </br>
+</br>
+<div>
+    <Label>Image</Label>
+    <input type="file" name="image" class="type-input">
+</div>
+</br>
+</br>
+        <div>
+            <label>Topic</label>
+            <select name="topic" class="text-input">
+                    <option value="Poetry">Poetry</option>
+                    <option value="Life Lessons">Life Lessons</option>
+
+            </select>
+        </div>
+        <br>
+        <br>
+        <div>
+            <button type="submit" class="btn btn-big">Publish</button>
+
+
+        </div>
+      </form>
+    
+    
+    </div>
+</div>
+
+<!-- Admin Content-->
+
+
+
+</div>
+<!-- // Page Wrapper-->
+
+<!--JQuery -->
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Ckeditor -->
+<script src="https://cdn.ckeditor.com/ckeditor5/35.2.0/classic/ckeditor.js"></script>
+<!-- Custom Script -->
+<script src="../js/scripts.js"></script>
+
+</body>
+
+</html>
