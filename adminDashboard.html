@@ -1,3 +1,15 @@
+<!-- <?php
+session_start();
+
+include("config.php");
+$email=$_SESSION['email'];
+$username = $_SESSION['username'];
+$isAdmin = $_SESSION['isAdmin'];
+if($email==''){
+	header('location:login.php');
+}
+?> -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,29 +22,30 @@
 </head>
 
 <body id='app' style="background-color: white;">
+    
     <table style="height: 15%; width: 100%; border-collapse: collapse;">
-        <tbody style="background-color: #e2e2e2;">
+        <tbody style="background-color: #f2f2f2;">
             <tr>
-                <td style="width: 9%;">&nbsp; &nbsp; &nbsp;<img style="width: 70%;" src="Dell_Logo.svg.png" /></td>
+                <td style="width: 9%;">&nbsp; &nbsp; &nbsp;<img style="width: 70%; margin:7px;" src="Dell_Logo.svg.png"  /></td>
                 <td
-                    style="width: 50%; text-align: left; color: #ffffff; font-size: xx-large; font-family: Arial, Helvetica, sans-serif;">
+                    style="width: 50%; text-align: left; color: #0076CE; font-size: xx-large; font-family: Arial;">
                     Dell Charity Engage Admin Dashboard</td>
                 <td style="width: 41%; color: #ffffff;">&nbsp;</td>
                 <td v-if="isAdmin" style="width: 19%; text-align: right; padding:20px">
-                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent" onClick="location.href='admin_page.php'">
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent" onClick="location.href='admin_page.php'"style="color: #0076CE">
                         Admin  Page 
                     </button>
                 </td>
-                <td style="width: 19%; text-align: right; padding:20px">
-                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent" onClick="location.href='landing_page.php'">
-                        {{username}} | Log Out
+                <td style="width: 19%; text-align: right; padding:20px; ">
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent" onClick="location.href='landing_page.php'" style="color: #0076CE">
+                        logout
                     </button>
                 </td>
             </tr>
         </tbody>
     </table>
     <div>
-        <h1 style="text-align: center;font-size: x-large; text-shadow:1px 1px;font-family: Arial, Helvetica, sans-serif;"> Dell Charity Engage (DCE) Statistics (Last Updated: 8th November 2022)</h1>
+        <h1 style="text-align: center;font-size: x-large; color: #0076CE; font-family: Arial"> Dell Charity Engage (DCE) Statistics</h1>
     </div>
     <table width="100%" style="position:relative;top:50px;bottom:50px">
         <tr>
@@ -53,7 +66,7 @@
             </td>
         </tr>
     </table>
-    <table style="width:100%;">
+    <table style="width:100%; margin-top: 20px">
         <tr>
             <td id='name_list' style="width:100%;text-align:center">
                 <div class='name_list' id='viz1632126355317' style='position: relative'>
