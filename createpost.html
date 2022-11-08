@@ -16,21 +16,33 @@
 
 <!--Admin Styling-->
 <link rel="stylesheet" href="../css/admin.css">
+<link rel="stylesheet" crossorigin href="https://dds.dell.com/components/2.7.2/css/dds-reboot.min.css" />
+<link rel="stylesheet" crossorigin href="https://dds.dell.com/components/2.7.2/css/dds-fonts.min.css" />
+<link rel="stylesheet" crossorigin href="https://dds.dell.com/components/2.7.2/css/dds-icons.min.css" />
+<link rel="stylesheet" crossorigin href="https://dds.dell.com/components/2.7.2/css/dds-helpers.min.css" />
+<link rel="stylesheet" crossorigin href="https://dds.dell.com/components/2.7.2/css/dds-main.min.css" />
+<link rel="stylesheet" crossorigin href="https://dds.dell.com/components/2.7.2/css/dds-templates.min.css" />
+<script src="https://dds.dell.com/components/2.7.2/js/index.min.js"></script>
 
 <title>Admin Section - Add Posts</title>
 </head>
-
+<header style="color: #0076CE; font-size: xx-large; font-family: Arial; background-color: #f2f2f2;"><a href="home.html"><img style="width: 5.5%; margin:10px;" src="Dell_Logo.svg.png" /></a> Dell Charity Engage (DCE)
+</header>
 <!-- Admin Page Wrapper-->
 <div class="admin-wrapper">
 
 
 
-
 <!-- Admin Content-->
 <div class="admin-content">
+    
     <div class="button-group">
-        <a href="createpost.html" class="btn btn-big">Add Post</a>
-        <a href="index.html" class="btn btn-big">Manage Posts</a>
+        <button onClick="location.href='createpost.html'"style=" left: 50%; text-align: right; color: #0076CE; border-color: #f2f2f2; border-radius: 10px;">
+            Add  Posts  
+        </button>
+        <button onClick="location.href='index.html'" style="color: #0076CE; left: 50%; border-color: #f2f2f2; border-radius: 10px;">
+            Manage Posts
+      </button>
     </div>
 
     <div class="content">
@@ -57,17 +69,17 @@
         <div>
             <label>Topic</label>
             <select name="topic" class="text-input">
-                    <option value="Poetry">Poetry</option>
-                    <option value="Life Lessons">Life Lessons</option>
+                    <option value="Announcement">General Announcement</option>
+                    <option value="Events">Event Update</option>
 
             </select>
         </div>
         <br>
         <br>
         <div>
-            <button type="submit" class="btn btn-big">Publish</button>
-
-
+            <button type="submit" class="btn btn-big" style=" left: 50%; text-align: right; color: #0076CE; border-color: #f2f2f2; border-radius: 10px;">
+                Publish 
+            </button>
         </div>
       </form>
     
