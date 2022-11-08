@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<body>
+    <div class="testbox">
+      <form data-dds="form" class="dds__form dds__container">
+	  <fieldset class="dds__form__section">
+		<legend>Personal information</legend>
+			<div class="firstname">
+			  <label id="text-input-label-firstname" for="firstname">First name</label>
+			  <div class="firstname-text__wrapper">
+				<input
+				  type="text"
+				  class="dds__input-text"
+				  name="firstname"
+				  id="firstname-input"
+				  placeholder="First name"
+				/>
+
+			  </div>
+			</div>
+			<div class="lastname">
+			  <label id="text-input-label-lastname" for="lastname">Last name</label>
+			  <div class="lastname">
+				<input
+				  type="text"
+				  class="dds__input-text"
+				  name="lastname"
+				  id="lastname-input"
+				  placeholder="Last name"
+				/>
+
+			  </div>
+		</div>
+		<div class="email">
+		  <label id="text-input-label-enail" for="email">Email</label>
+		  <div class="dds__input-text__wrapper">
+			<input
+			  type="email"
+			  class="dds__input-text"
+			  name="email"
+			  id="email-input"
+			/>
+		  </div>
+		</div>
+		<div class="shirtsize-select">
+		  <label id="shirtsizelabel" for="select-size">T-shirt size</label>
+		  <div class="dds__select__wrapper">
+			<select id="select-size" class="shirtsize">
+			  <option value="" class="dds__select__option--placeholder" selected>Select an option</option>
+			  <option value="xss">XXS</option>
+			  <option value="xs">XS</option>
+			  <option value="s">S</option>
+			  <option value="m">M</option>
+			  <option value="l">L</option>
+			  <option value="xl">XL</option>
+			  <option value="xxl">XXL</option>
+			</select>
+		  </div>
+		</div>
+		<div class="marathon-select">
+		  <label id="select-marathon-label" for="select-marathon">Join Marathon?</label>
+		  <div class="dds__select__wrapper">
+			<select id="select-marathon" class="marathon">
+			  <option value="" class="dds__select__option--placeholder" selected>Select an option</option>
+			  <option value="yes">Yes</option>
+			  <option value="no">No</option>
+			</select>
+		  </div>
+		</div>
+	  </fieldset>
+	  <fieldset class="dds__form__section">
+		<legend>Family member</legend>
+		<div class="dds__row">
+		  <label id="select-label-650394676" for="select-control-650394676">Family members</label>
+		  <div class="dds__select__wrapper">
+			<select id="select-member"  onchange="getOption()">
+			  <option value="default" class="dds__select__option--placeholder" selected>Select an option</option>
+			  <option value="yes">Yes</option>
+			  <option value="no">No</option>
+			</select>
+		  </div>
+		</div>
+	  </fieldset>
+	  <fieldset id="family-member-information" style="display: none;">
+		<legend>Family member information</legend>
+		<div>
+		<div id="family-member0">
+		<label id="membernum">Member 1</label>
+		  <div class="dds__col--1 dds__col--sm-3">
+			  <label id="text-input-label-memberFirstName" for="memberFirstName">First name</label>
+			  <div class="dds__input-text__wrapper">
+				<input
+				  type="text"
+				  id="text-input-control-memberFirstName"
+				  placeholder="First name"
+				/>
+			</div>
+		  </div>
+		  <div class="dds__col--1 dds__col--sm-3">
+			  <label id="text-input-label-memberLastName" for="text-input-control-name-memberLastName">Last name</label>
+			  <div class="dds__input-text__wrapper">
+				<input
+				  type="text"
+				  id="text-input-control-memberLastName"
+				  placeholder="Last name"
+				/>
+			</div>
+		  </div>
+		<div class="dds__row">
+		  <label id="select-size-label" for="select-size">T-shirt size</label>
+		  <div class="dds__select__wrapper">
+			<select id="select-size" class="dds__select__field" aria-describedby="select-helper-650394676" required="">
+			  <option value="" class="dds__select__option--placeholder" selected>Select an option</option>
+			  <option value="xss">XXS</option>
+			  <option value="xs">XS</option>
+			  <option value="s">S</option>
+			  <option value="m">M</option>
+			  <option value="l">L</option>
+			  <option value="xl">XL</option>
+			  <option value="xxl">XXL</option>
+			</select>
+		  </div>
+		</div>
+		<div class="dds__row">
+		  <label id="select-marathon-label" for="select-marathon">Join Marathon?</label>
+		  <div class="dds__select__wrapper">
+			<select id="select-marathon" class="dds__select__field" aria-describedby="select-helper-650394676" required="">
+			  <option value="" class="dds__select__option--placeholder" selected>Select an option</option>
+			  <option value="yes">Yes</option>
+			  <option value="no">No</option>
+			</select>
+		  </div>
+		</div>
+		<br>
+		</div>
+		</div>
+		<button id="button" onclick="duplicate()">Add member</button>
+	  </fieldset>
+	<script type="text/javascript">
+	function getOption() {
+		var select = document.getElementById("select-member");
+		var quantity = select.options[select.selectedIndex].value;
+		var x = document.getElementById("family-member-information");
+		if(quantity === 'no'){
+			x.style.display = "none";
+		}
+		else{
+			x.style.display = "block";
+		}
+	}
+	var i = 0;
+	function duplicate() {
+		var original = document.getElementById('family-member' + i);
+		var clone = original.cloneNode(true); // "deep" clone
+		clone.id = "family-member" + (i+1); // there can only be one element with an ID
+		original.parentNode.appendChild(clone);
+		document.querySelector("#"+clone.id+" > #membernum").innerHTML = "Member " +(i+2);
+		//document.querySelector("#"+clone.id+" > #text-input-control-memberFirstName").innerHTML = "";
+		//document.querySelector("#"+clone.id+" > #text-input-control-memberLastName").innerHTML = "";
+		i++;
+	}
+	
+	function WriteToFile()
+		{
+		var fso = new ActiveXObject("Scripting.FileSystemObject");
+		var s = fso.CreateTextFile("NewFile.txt", true);
+		var firstname=document.getElementById("firstname-input").value;
+		var lastname=document.getElementById("lastname-input").value;
+		var email=document.getElementById("email-input").value;
+		var tShirtSize=document.getElementById("select-size");
+		var quantitytshirt = select.options[tShirtSize.selectedIndex].value;
+		var marathon=document.getElementById("select-marathon");
+		var quantitymarathon = select.options[marathon.selectedIndex].value;
+		
+		var familyMember=i
+		let member = []
+		
+		for(let num = 0; num<=i;i++){
+			var memberFirstName=document.querySelector("#family-member"+num+" > #text-input-control-memberFirstName").value;
+			var memberLastName=document.querySelector("#family-member"+num+" > #text-input-control-memberLastName").value;
+			var sizeselect=document.querySelector("#family-member"+num+" > #select-size");
+			var quantitymembersize = select.options[sizeselect.selectedIndex].value;
+			var marathonselect=document.querySelector("#family-member"+num+"> #select-marathon");
+			var quantitymembermarathon = select.options[marathon.selectedIndex].value;
+			member.push(memberFirstName);
+			member.push(memberLastName);
+			member.push(quantitymembersize);
+			member.push(quantitymembermarathon);
+		}
+		
+		s.WriteLine(firstname);
+		s.WriteLine(lastname);
+		s.WriteLine(email);
+		s.WriteLine(tShirtSize);
+		s.WriteLine(firstname);
+		s.WriteLine(quantitytshirt);
+		s.WriteLine(quantitymarathon);
+		s.WriteLine(i);
+		s.WriteLine(member);
+		s.WriteLine('***********************');
+		s.Close();
+		}
+	</script>
+	<fieldset class="dds__form__section">
+		<legend>NGO Selection</legend>
+		<div class="dds__row">
+		  <label id="select-ngo-label" for="select-control-ngo">NGO</label>
+		  <div class="dds__select__wrapper">
+			<select id="select-ngo"  onchange="">
+			  <option value="default" class="dds__select__option--placeholder" selected>Select an option</option>
+			  <option value="" class="dds__select__option--placeholder" selected>Select an option</option>
+			  <option value="epichouse">Epic Homes</option>
+			  <option value="sol247">SOLS 24/7</option>
+			  <option value="freetreesociety">Free Tree Society</option>
+			  <option value="mercymalaysia">Mercy Malaysia</option>
+			</select>
+		  </div>
+		</div>
+	  </fieldset>
+	  <button class="dds__button" type="submit" onclick="WriteToFile()">Submit</button>
+	</form>
+    </div>
