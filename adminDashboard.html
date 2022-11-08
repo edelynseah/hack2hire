@@ -10,6 +10,10 @@ if($email==''){
 }
 ?> -->
 
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,28 +23,35 @@ if($email==''){
         let username = '<?php echo $username;?>';
         let isAdmin = '<?php echo $isAdmin;?>';
     </script> -->
-    <link rel="stylesheet" crossorigin href="https://dds.dell.com/components/2.7.2/css/dds-reboot.min.css" />
-    <link rel="stylesheet" crossorigin href="https://dds.dell.com/components/2.7.2/css/dds-fonts.min.css" />
-    <link rel="stylesheet" crossorigin href="https://dds.dell.com/components/2.7.2/css/dds-icons.min.css" />
-    <link rel="stylesheet" crossorigin href="https://dds.dell.com/components/2.7.2/css/dds-helpers.min.css" />
-    <link rel="stylesheet" crossorigin href="https://dds.dell.com/components/2.7.2/css/dds-main.min.css" />
-    <link rel="stylesheet" crossorigin href="https://dds.dell.com/components/2.7.2/css/dds-templates.min.css" />
-    <script src="https://dds.dell.com/components/2.7.2/js/index.min.js"></script>
 </head>
 
 <body id='app' style="background-color: white;">
-    <header style="color: #0076CE; font-size: xx-large; font-family: Arial; background-color: #f2f2f2;"><a href="home.html"><img style="width: 5.5%; margin:10px;" src="Dell_Logo.svg.png" /></a> Dell Charity Engage (DCE) 
-        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent" onClick="location.href='index.html'"style=" left: 50%; text-align: right; color: #0076CE">
-            Admin  Posts  
-        </button>
-        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent" onClick="location.href='home.html'" style="color: #0076CE; left: 50%;">
-            logout
-        </button>
-    </header>
+    
+    <table style="height: 15%; width: 100%; border-collapse: collapse;">
+        <tbody style="background-color: #f2f2f2;">
+            <tr>
+                <td style="width: 9%;">&nbsp; &nbsp; &nbsp;<img style="width: 70%; margin:7px;" src="Dell_Logo.svg.png"  /></td>
+                <td
+                    style="width: 50%; text-align: left; color: #0076CE; font-size: xx-large; font-family: Arial;">
+                    Dell Charity Engage Admin Dashboard</td>
+                <td style="width: 41%; color: #ffffff;">&nbsp;</td>
+                <td v-if="isAdmin" style="width: 19%; text-align: right; padding:20px">
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent" onClick="location.href='admin_page.php'"style="color: #0076CE">
+                        Admin  Page 
+                    </button>
+                </td>
+                <td style="width: 19%; text-align: right; padding:20px; ">
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent" onClick="location.href='logout.php'" style="color: #0076CE">
+                        logout
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <div>
         <h1 style="text-align: center;font-size: x-large; color: #0076CE; font-family: Arial"> Dell Charity Engage (DCE) Statistics</h1>
     </div>
-    <table width="80%" style="position:relative;top:0px;bottom:50px; text-align: center;">
+    <table width="100%" style="position:relative;top:50px;bottom:50px">
         <tr>
             <td>
                 <div>

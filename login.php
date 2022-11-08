@@ -10,7 +10,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" )  {
     $password = mysqli_real_escape_string($db, $password);
 
     $sql = "SELECT * FROM login WHERE email='$email' AND password='$password'";
+    $permission = "SELECT permission FROM login WHERE  email='$email' AND password='$password'";
     $result = mysqli_query($db, $sql);
+    $permission = mysqli_query($db, $permission);
+    $permission = mysqli_fetch_array($permission, MYSQLI_ASSOC);
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
     if(mysqli_num_rows($result)==1){
 //        $status = "SELECT status FROM users WHERE email='$email'";
@@ -21,8 +24,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" )  {
 //        $isAdmin = in_array('admin', mysqli_fetch_assoc(mysqli_query($db,$status)));
           $_SESSION['email'] = $email;
 //        $_SESSION['username'] = $username;
-//        $_SESSION['isAdmin'] = $isAdmin;
-        header("Location: home.html");
+          $_SESSION['permission'] = $permission;
+        if(implode($_SESSION['permission'])=='admin') {
+            header("Location: adminDashboard.html");
+        }
+
+        else{
+            header("Location: home2.php");
+        }
         exit;
     }
     else {
