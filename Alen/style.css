@@ -34,7 +34,7 @@ margin: 20px 0 4px;
 font-weight: 400;
 }
 span {
-color: red;
+color: #0076CE;
 }
 .small {
 font-size: 10px;
@@ -274,5 +274,5 @@ background-color: #0666a3;
 	font-size: 16px;
 }
 .tc{
-	color: red;
+	color: #0076CE;
 }
