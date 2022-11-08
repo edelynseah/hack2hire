@@ -1,8 +1,6 @@
-@use "@dds/web-components/src/scss/dds-fonts.scss"
-
 html, body {
 min-height: 100%;
-font-style: replica;
+font-family: Arial;
 }
 
 .inv-body{

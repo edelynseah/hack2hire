@@ -3,11 +3,19 @@
 <head>
 <title>Registration</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" crossorigin href="https://dds.dell.com/components/2.7.2/css/dds-reboot.min.css" />
+<link rel="stylesheet" crossorigin href="https://dds.dell.com/components/2.7.2/css/dds-fonts.min.css" />
+<link rel="stylesheet" crossorigin href="https://dds.dell.com/components/2.7.2/css/dds-icons.min.css" />
+<link rel="stylesheet" crossorigin href="https://dds.dell.com/components/2.7.2/css/dds-helpers.min.css" />
+</head>
 <body>
+	<header style="color: #0076CE; font-size: xx-large; font-family: Arial; background-color: #f2f2f2;"><a href="home.html"><img style="width: 5.5%; margin:10px;" src="../Dell_Logo.svg.png" /></a> Dell Charity Engage (DCE) 
+    </header>
+	<a href="home.html"
     <div class="testbox">
       <form data-dds="form" class="dds__form dds__container">
 	  <fieldset class="dds__form__section">
-		<legend>Personal information</legend>
+		<legend style="font-size:x-large;">Personal information</legend>
 			<div class="firstname">
 			  <label id="text-input-label-firstname" for="firstname">First name</label>
 			  <div class="firstname-text__wrapper">
@@ -42,6 +50,7 @@
 			  class="dds__input-text"
 			  name="email"
 			  id="email-input"
+			  placeholder="example@gmail.com"
 			/>
 		  </div>
 		</div>
@@ -50,7 +59,7 @@
 		  <div class="dds__select__wrapper">
 			<select id="select-size" class="shirtsize">
 			  <option value="" class="dds__select__option--placeholder" selected>Select an option</option>
-			  <option value="xss">XXS</option>
+			  <option value="xxs">XXS</option>
 			  <option value="xs">XS</option>
 			  <option value="s">S</option>
 			  <option value="m">M</option>
@@ -61,7 +70,7 @@
 		  </div>
 		</div>
 		<div class="marathon-select">
-		  <label id="select-marathon-label" for="select-marathon">Join Marathon?</label>
+		  <label id="select-marathon-label" for="select-marathon">Will you be joining the marathon?</label>
 		  <div class="dds__select__wrapper">
 			<select id="select-marathon" class="marathon">
 			  <option value="" class="dds__select__option--placeholder" selected>Select an option</option>
@@ -71,10 +80,11 @@
 		  </div>
 		</div>
 	  </fieldset>
+	  <br>
 	  <fieldset class="dds__form__section">
-		<legend>Family member</legend>
+		<legend style="font-size:x-large;">Dependents Information</legend>
 		<div class="dds__row">
-		  <label id="select-label-650394676" for="select-control-650394676">Family members</label>
+		  <label id="select-label-650394676" for="select-control-650394676">Are you registering a family member?</label>
 		  <div class="dds__select__wrapper">
 			<select id="select-member"  onchange="getOption()">
 			  <option value="default" class="dds__select__option--placeholder" selected>Select an option</option>
@@ -204,8 +214,10 @@
 		s.Close();
 		}
 	</script>
+	<br>
 	<fieldset class="dds__form__section">
-		<legend>NGO Selection</legend>
+
+		<legend style="font-size:x-large;">NGO Selection</legend>
 		<div class="dds__row">
 		  <label id="select-ngo-label" for="select-control-ngo">NGO</label>
 		  <div class="dds__select__wrapper">
@@ -220,6 +232,8 @@
 		  </div>
 		</div>
 	  </fieldset>
-	  <button class="dds__button" type="submit" onclick="WriteToFile()">Submit</button>
+	  <br>
+	  <button class="dds__button" style="border-radius: 10px; text-align: center; background-color: #5e5e5e;" type="submit" onClick="location.href='../login.html'">Go back</button>
+	  <button class="dds__button" style="border-radius: 10px; text-align: center;" type="submit" onClick="location.href='receipt.html'">Submit</button>
 	</form>
     </div>
