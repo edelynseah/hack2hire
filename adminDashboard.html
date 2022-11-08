@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> admin page </title>
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+    <!-- <script>
+        let username = '<?php echo $username;?>';
+        let isAdmin = '<?php echo $isAdmin;?>';
+    </script> -->
+</head>
+
+<body id='app' style="background-color: white;">
+    <table style="height: 15%; width: 100%; border-collapse: collapse;">
+        <tbody style="background-color: #e2e2e2;">
+            <tr>
+                <td style="width: 9%;">&nbsp; &nbsp; &nbsp;<img style="width: 70%;" src="Dell_Logo.svg.png" /></td>
+                <td
+                    style="width: 50%; text-align: left; color: #ffffff; font-size: xx-large; font-family: Arial, Helvetica, sans-serif;">
+                    Dell Charity Engage Admin Dashboard</td>
+                <td style="width: 41%; color: #ffffff;">&nbsp;</td>
+                <td v-if="isAdmin" style="width: 19%; text-align: right; padding:20px">
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent" onClick="location.href='admin_page.php'">
+                        Admin  Page 
+                    </button>
+                </td>
+                <td style="width: 19%; text-align: right; padding:20px">
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent" onClick="location.href='landing_page.php'">
+                        {{username}} | Log Out
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <h1 style="text-align: center;font-size: x-large; text-shadow:1px 1px;font-family: Arial, Helvetica, sans-serif;"> Dell Charity Engage (DCE) Statistics (Last Updated: 8th November 2022)</h1>
+    </div>
+    <table width="100%" style="position:relative;top:50px;bottom:50px">
+        <tr>
+            <td>
+                <div>
+                    <script type='marathon_participants' src='https://prod-apnortheast-a.online.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js'></script><tableau-viz id='tableau-viz' src='https://prod-apnortheast-a.online.tableau.com/t/h2h/views/ngo_donations/marathon_participants' width='500' height='300' hide-tabs toolbar='bottom' ></tableau-viz>
+                </div>   
+            </td>
+            <td>
+                <script type='total_donations' src='https://prod-apnortheast-a.online.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js'></script><tableau-viz id='tableau-viz' src='https://prod-apnortheast-a.online.tableau.com/t/h2h/views/ngo_donations/Donations_ngo' width='500' height='300' hide-tabs toolbar='bottom' ></tableau-viz>
+
+            </td>
+            <td>
+                <div class='tshirt_size' id='viz1632124985989' style='position: relative'>
+                    <script type='module' src='https://prod-apnortheast-a.online.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js'></script><tableau-viz id='tableau-viz' src='https://prod-apnortheast-a.online.tableau.com/t/h2h/views/ngo_donations/marathon_count' width='500' height='300' hide-tabs toolbar='bottom' ></tableau-viz>
+                </div>
+
+            </td>
+        </tr>
+    </table>
+    <table style="width:100%;">
+        <tr>
+            <td id='name_list' style="width:100%;text-align:center">
+                <div class='name_list' id='viz1632126355317' style='position: relative'>
+                    <script type='module' src='https://prod-apnortheast-a.online.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js'></script><tableau-viz id='tableau-viz' src='https://prod-apnortheast-a.online.tableau.com/t/h2h/views/ngo_donations/name_list' width='1600' height='647' hide-tabs toolbar='bottom' ></tableau-viz>
+                </div>
+
+            </td>
+        </tr>
+    </table>
+</body>
+<script type='text/javascript'>
+    var scriptElement = document.createElement('script');
+    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+    var divElement = document.getElementById('viz1632123671016');
+    var vizElement = divElement.getElementsByTagName('object')[0];
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    divElement = document.getElementById('viz1632124809963');
+    vizElement = divElement.getElementsByTagName('object')[0];
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    divElement = document.getElementById('viz1632124985989');
+    vizElement = divElement.getElementsByTagName('object')[0];
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    divElement = document.getElementById('viz1632126355317');
+    vizElement = divElement.getElementsByTagName('object')[0];
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    divElement = document.getElementById('viz1632142248597');
+    vizElement = divElement.getElementsByTagName('object')[0];
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    divElement = document.getElementById('viz1632208005004');
+    vizElement = divElement.getElementsByTagName('object')[0];
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+
+</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.grey-light_blue.min.css">
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<script  src="../js files/navigation.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</html>
